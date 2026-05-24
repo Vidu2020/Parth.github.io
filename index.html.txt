@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parth | AI & ML Engineer</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+    <h1>Parth</h1>
+    <p>AI & Machine Learning Engineer</p>
+</header>
+
+<section id="about">
+    <h2>About Me</h2>
+    <img src="images/profile.jpg" alt="Profile">
+    <p>
+        I am an AI & ML Engineer passionate about building intelligent systems,
+        solving real-world problems, and working with data-driven solutions.
+    </p>
+</section>
+
+<section id="skills">
+    <h2>Skills</h2>
+    <ul>
+        <li>Python</li>
+        <li>Machine Learning</li>
+        <li>Deep Learning</li>
+        <li>TensorFlow / PyTorch</li>
+        <li>Data Analysis</li>
+    </ul>
+</section>
+
+<section id="projects">
+    <h2>Projects</h2>
+
+    <div class="project">
+        <h3>AI Chatbot</h3>
+        <p>Built a chatbot using NLP techniques.</p>
+    </div>
+
+    <div class="project">
+        <h3>Image Classifier</h3>
+        <p>Deep learning model for image recognition.</p>
+    </div>
+
+</section>
+
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: your@email.com</p>
+    <p>
+        <a href="https://github.com/yourusername">GitHub</a> |
+        <a href="https://linkedin.com/in/yourusername">LinkedIn</a>
+    </p>
+</section>
+
+<footer>
+    <p>© 2026 Parth</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
