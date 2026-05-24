@@ -1,13 +1,13 @@
 /* =========================
-   Root Variables (Theme)
+   ROOT (Theme + Colors)
 ========================= */
 :root {
   --bg: #0d1117;
-  --surface: #161b22;
-  --border: #30363d;
+  --surface: rgba(255,255,255,0.05);
+  --border: rgba(255,255,255,0.1);
   --text: #e6edf3;
   --muted: #8b949e;
-  --accent: #3fbfbd;
+  --accent: linear-gradient(135deg, #3fbfbd, #6a5cff);
 
   --radius-lg: 16px;
   --radius-md: 12px;
@@ -22,7 +22,7 @@
 }
 
 /* =========================
-   Base Styles
+   RESET
 ========================= */
 * {
   margin: 0;
@@ -30,95 +30,56 @@
   box-sizing: border-box;
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
 body {
-  font-family: system-ui, -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
   line-height: 1.6;
 }
 
 /* =========================
-   Container
+   CONTAINER
 ========================= */
 .container {
   width: 90%;
   max-width: 1200px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 /* =========================
-   Typography
+   HEADER
 ========================= */
-h1 {
-  font-size: clamp(36px, 6vw, 72px);
-  font-weight: 700;
-}
-
-h2 {
-  font-size: clamp(22px, 4vw, 36px);
-  margin-bottom: var(--space-3);
-}
-
-h3 {
-  font-size: 20px;
-  margin-bottom: var(--space-2);
-}
-
-p {
-  font-size: 16px;
-  color: var(--muted);
-}
-
-small {
-  font-size: 13px;
-}
-
-/* =========================
-   Header
-========================= */
-header {
-  height: 64px;
-  display: flex;
-  align-items: center;
+.header {
   position: sticky;
   top: 0;
+  height: 64px;
   backdrop-filter: blur(10px);
-  background: rgba(13, 17, 23, 0.85);
-  z-index: 10;
+  background: rgba(13,17,23,0.7);
+  display: flex;
+  align-items: center;
+  z-index: 100;
 }
 
-nav {
+.nav {
   display: flex;
   justify-content: space-between;
   width: 100%;
-  font-size: 14px;
 }
 
-nav a {
+.nav a {
+  margin-left: 20px;
   text-decoration: none;
   color: var(--text);
-  margin-left: var(--space-3);
+  font-size: 14px;
   transition: 0.3s;
 }
 
-nav a:hover,
-nav a.active {
-  color: var(--accent);
+.nav a:hover {
+  color: #3fbfbd;
 }
 
 /* =========================
-   Sections
-========================= */
-section {
-  padding: var(--space-6) 0;
-}
-
-/* =========================
-   Hero Section
+   HERO
 ========================= */
 .hero {
   min-height: 85vh;
@@ -130,23 +91,41 @@ section {
   max-width: 700px;
 }
 
-.hero p {
-  margin: var(--space-2) 0;
+.hero h1 {
+  font-size: clamp(36px, 5vw, 64px);
+  line-height: 1.2;
 }
 
-/* =========================
-   Buttons
-========================= */
+/* Gradient Text */
+.accent {
+  background: var(--accent);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero p {
+  margin: var(--space-2) 0;
+  color: var(--muted);
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: var(--space-2);
+}
+
 .btn {
-  display: inline-block;
   padding: 12px 20px;
   border-radius: var(--radius-md);
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  transition: 0.3s;
+  min-height: 44px;
+}
+
+.primary {
   background: var(--accent);
   color: black;
-  border: none;
-  cursor: pointer;
-  transition: 0.3s ease;
-  min-height: 44px;
 }
 
 .btn:hover {
@@ -155,90 +134,125 @@ section {
 }
 
 /* =========================
-   Grid System
+   SOCIAL LINKS
+========================= */
+.socials a {
+  margin-right: 15px;
+  color: var(--muted);
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  color: #3fbfbd;
+}
+
+/* =========================
+   GRID
 ========================= */
 .grid {
   display: grid;
   gap: var(--space-3);
 }
 
-/* Projects */
-.projects-grid {
+/* =========================
+   PROJECT CARDS
+========================= */
+.projects {
   grid-template-columns: repeat(1, 1fr);
 }
 
 .card {
-  background: var(--surface);
-  padding: var(--space-2);
+  padding: var(--space-3);
   border-radius: var(--radius-lg);
+  transition: 0.3s;
+}
+
+/* Glassmorphism */
+.glass {
+  background: var(--surface);
   border: 1px solid var(--border);
-  transition: 0.3s ease;
+  backdrop-filter: blur(12px);
 }
 
 .card:hover {
-  transform: translateY(-4px);
-  border-color: var(--accent);
+  transform: translateY(-6px);
+  border-color: #3fbfbd;
 }
 
 /* =========================
-   About Section
+   ABOUT
 ========================= */
 .about {
   display: grid;
   gap: var(--space-4);
 }
 
+.skills {
+  list-style: none;
+  margin-top: var(--space-2);
+}
+
+.skills li {
+  margin-bottom: 8px;
+}
+
 /* =========================
-   Resume Section
+   TIMELINE
 ========================= */
 .timeline {
   max-width: 900px;
 }
 
-.timeline div {
+.timeline-item {
   margin-bottom: var(--space-3);
+  padding: var(--space-3);
+  border-radius: var(--radius-lg);
 }
 
 /* =========================
-   Contact
+   CONTACT
 ========================= */
-form {
-  max-width: 600px;
+.contact-grid {
+  display: grid;
+  gap: var(--space-3);
 }
 
-input,
-textarea {
-  width: 100%;
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+input, textarea {
+  margin-top: var(--space-2);
   padding: 12px;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
-  margin-top: var(--space-2);
   background: transparent;
   color: var(--text);
   min-height: 44px;
 }
 
 textarea {
-  resize: vertical;
+  resize: none;
 }
 
 /* =========================
-   Footer
+   FOOTER
 ========================= */
 footer {
   text-align: center;
   padding: var(--space-3);
-  color: var(--muted);
   border-top: 1px solid var(--border);
+  color: var(--muted);
 }
 
 /* =========================
-   Animation
+   FADE ANIMATION
 ========================= */
 .fade {
   opacity: 0;
   transform: translateY(20px);
-  transition: all 0.6s ease;
+  transition: 0.6s ease;
 }
 
 .fade.show {
@@ -252,16 +266,16 @@ footer {
 
 /* Tablet */
 @media (min-width: 768px) {
-  section {
-    padding: var(--space-6) 0;
-  }
-
-  .projects-grid {
+  .projects {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .about {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
   }
 }
 
@@ -271,27 +285,23 @@ footer {
     height: 72px;
   }
 
-  section {
-    padding: var(--space-7) 0;
-  }
-
-  .projects-grid {
+  .projects {
     grid-template-columns: repeat(3, 1fr);
   }
 }
 
 /* Desktop */
 @media (min-width: 1440px) {
-  .projects-grid {
+  .projects {
     grid-template-columns: repeat(4, 1fr);
   }
 }
 
-/* Mobile Adjustments */
+/* Mobile */
 @media (max-width: 600px) {
   .hero {
-    padding: 96px 0 64px;
     min-height: auto;
+    padding: 96px 0 64px;
   }
 
   section {
