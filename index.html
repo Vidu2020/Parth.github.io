@@ -1,56 +1,179 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parth | Senior Data Scientist</title>
 
-<title>Senior Data Scientist Portfolio</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="style.css">
+</head>
 
-<style>
-:root {
-  --bg: #0d1117;
-  --card: #161b22;
-  --text: #e6edf3;
-  --muted: #8b949e;
-  --accent: #3fbfbd;
-}
+<body>
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+<!-- ================= HEADER ================= -->
+<header>
+  <div class="container">
+    <nav>
+      <div><strong>Parth</strong></div>
+      <div>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </div>
+</header>
 
-body {
-  font-family: system-ui, sans-serif;
-  background: var(--bg);
-  color: var(--text);
-  line-height: 1.6;
-}
+<!-- ================= HERO ================= -->
+<section id="home" class="hero">
+  <div class="container hero-content fade">
+    <h1>Senior Data Scientist</h1>
+    <p>
+      I design and deploy scalable machine learning systems,
+      predictive models, and intelligent solutions that drive business impact.
+    </p>
 
-.container {
-  width: 90%;
-  max-width: 1200px;
-  margin: auto;
-}
+    <div>
+      <a href="#projects" class="btn">View Projects</a>
+      <a href="resume.pdf" class="btn" download>Download Resume</a>
+    </div>
 
-section {
-  padding: 64px 0;
-}
+    <br>
 
-h1, h2, h3 {
-  margin-bottom: 16px;
-}
+    <p>
+      🔗 
+      <a href="#">GitHub</a> |
+      <a href="#">LinkedIn</a> |
+      <a href="#">Email</a>
+    </p>
+  </div>
+</section>
 
-h1 { font-size: clamp(36px, 6vw, 64px); }
-h2 { font-size: clamp(24px, 4vw, 32px); }
+<!-- ================= PROJECTS ================= -->
+<section id="projects">
+  <div class="container fade">
+    <h2>Featured Projects</h2>
 
-p { color: var(--muted); }
+    <div class="grid projects-grid">
 
-/* Header */
-header {
-  height: 72px;
-  display: flex;
-  align-items: center;
-  position: sticky;
-  top: 0;
+      <div class="card">
+        <h3>Predictive Modeling System</h3>
+        <p>Improved forecasting accuracy by 35% using advanced ML algorithms.</p>
+        <small>Python • XGBoost • AWS</small>
+      </div>
+
+      <div class="card">
+        <h3>Fraud Detection Engine</h3>
+        <p>Real-time anomaly detection reducing fraud incidents by 28%.</p>
+        <small>Deep Learning • TensorFlow • Stream Processing</small>
+      </div>
+
+      <div class="card">
+        <h3>Recommendation System</h3>
+        <p>Boosted user engagement by 20% with personalized recommendations.</p>
+        <small>NLP • Collaborative Filtering</small>
+      </div>
+
+      <div class="card">
+        <h3>NLP Chatbot</h3>
+        <p>High-accuracy conversational agent for customer interaction.</p>
+        <small>BERT • Transformers • Python</small>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="container about fade">
+
+    <div>
+      <h2>About Me</h2>
+      <p>
+        I am a Senior Data Scientist experienced in building scalable
+        machine learning solutions and transforming data into actionable insights.
+      </p>
+    </div>
+
+    <div>
+      <h3>Skills</h3>
+      <p>
+        Python, Machine Learning, Deep Learning, NLP, TensorFlow,
+        PyTorch, SQL, Data Engineering, AWS, Big Data
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ================= RESUME ================= -->
+<section id="resume">
+  <div class="container fade">
+    <h2>Resume & Certifications</h2>
+
+    <div class="timeline">
+
+      <div>
+        <h3>Senior Data Scientist</h3>
+        <p>Company XYZ • 2023 – Present</p>
+      </div>
+
+      <div>
+        <h3>Data Scientist</h3>
+        <p>Company ABC • 2021 – 2023</p>
+      </div>
+
+      <div>
+        <h3>Education</h3>
+        <p>MSc Data Science • University Name</p>
+      </div>
+
+      <div>
+        <h3>Certifications</h3>
+        <p>Google ML • AWS ML Specialty • Deep Learning Specialization</p>
+      </div>
+
+    </div>
+
+    <br>
+    <a href="resume.pdf" class="btn" download>Download Full Resume</a>
+
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="container fade">
+    <h2>Contact</h2>
+
+    <p>Email: your@email.com</p>
+    <p>GitHub: github.com/yourusername</p>
+    <p>LinkedIn: linkedin.com/in/yourusername</p>
+    <p>Location: India</p>
+
+    <br>
+
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="email" placeholder="Your Email" required>
+      <textarea rows="4" placeholder="Your Message" required></textarea>
+      <button class="btn">Send Message</button>
+    </form>
+
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <p>© 2026 Parth | Senior Data Scientist Portfolio</p>
+</footer>
+
+<!-- Script -->
+<script src="script.js"></script>
+
+</body>
+</html>
