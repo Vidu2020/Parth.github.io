@@ -1,45 +1,304 @@
+/* =========================
+   Root Variables (Theme)
+========================= */
+:root {
+  --bg: #0d1117;
+  --surface: #161b22;
+  --border: #30363d;
+  --text: #e6edf3;
+  --muted: #8b949e;
+  --accent: #3fbfbd;
+
+  --radius-lg: 16px;
+  --radius-md: 12px;
+
+  --space-1: 8px;
+  --space-2: 16px;
+  --space-3: 24px;
+  --space-4: 32px;
+  --space-5: 40px;
+  --space-6: 64px;
+  --space-7: 96px;
+}
+
+/* =========================
+   Base Styles
+========================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f4f4;
-    text-align: center;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
 }
 
+/* =========================
+   Container
+========================= */
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* =========================
+   Typography
+========================= */
+h1 {
+  font-size: clamp(36px, 6vw, 72px);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: clamp(22px, 4vw, 36px);
+  margin-bottom: var(--space-3);
+}
+
+h3 {
+  font-size: 20px;
+  margin-bottom: var(--space-2);
+}
+
+p {
+  font-size: 16px;
+  color: var(--muted);
+}
+
+small {
+  font-size: 13px;
+}
+
+/* =========================
+   Header
+========================= */
 header {
-    background: #0078d4;
-    color: white;
-    padding: 20px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  backdrop-filter: blur(10px);
+  background: rgba(13, 17, 23, 0.85);
+  z-index: 10;
 }
 
+nav {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  font-size: 14px;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--text);
+  margin-left: var(--space-3);
+  transition: 0.3s;
+}
+
+nav a:hover,
+nav a.active {
+  color: var(--accent);
+}
+
+/* =========================
+   Sections
+========================= */
 section {
-    margin: 20px;
-    padding: 20px;
-    background: white;
-    border-radius: 10px;
+  padding: var(--space-6) 0;
 }
 
-img {
-    width: 150px;
-    border-radius: 50%;
+/* =========================
+   Hero Section
+========================= */
+.hero {
+  min-height: 85vh;
+  display: flex;
+  align-items: center;
 }
 
-ul {
-    list-style: none;
-    padding: 0;
+.hero-content {
+  max-width: 700px;
 }
 
-.project {
-    margin: 10px 0;
+.hero p {
+  margin: var(--space-2) 0;
 }
 
-a {
-    color: #0078d4;
-    text-decoration: none;
+/* =========================
+   Buttons
+========================= */
+.btn {
+  display: inline-block;
+  padding: 12px 20px;
+  border-radius: var(--radius-md);
+  background: var(--accent);
+  color: black;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s ease;
+  min-height: 44px;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* =========================
+   Grid System
+========================= */
+.grid {
+  display: grid;
+  gap: var(--space-3);
+}
+
+/* Projects */
+.projects-grid {
+  grid-template-columns: repeat(1, 1fr);
+}
+
+.card {
+  background: var(--surface);
+  padding: var(--space-2);
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--border);
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+/* =========================
+   About Section
+========================= */
+.about {
+  display: grid;
+  gap: var(--space-4);
+}
+
+/* =========================
+   Resume Section
+========================= */
+.timeline {
+  max-width: 900px;
+}
+
+.timeline div {
+  margin-bottom: var(--space-3);
+}
+
+/* =========================
+   Contact
+========================= */
+form {
+  max-width: 600px;
+}
+
+input,
+textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+  margin-top: var(--space-2);
+  background: transparent;
+  color: var(--text);
+  min-height: 44px;
+}
+
+textarea {
+  resize: vertical;
+}
+
+/* =========================
+   Footer
+========================= */
 footer {
-    margin-top: 20px;
-    padding: 10px;
-    background: #333;
-    color: white;
+  text-align: center;
+  padding: var(--space-3);
+  color: var(--muted);
+  border-top: 1px solid var(--border);
+}
+
+/* =========================
+   Animation
+========================= */
+.fade {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 0.6s ease;
+}
+
+.fade.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* =========================
+   RESPONSIVE DESIGN
+========================= */
+
+/* Tablet */
+@media (min-width: 768px) {
+  section {
+    padding: var(--space-6) 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .about {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Laptop */
+@media (min-width: 1024px) {
+  header {
+    height: 72px;
+  }
+
+  section {
+    padding: var(--space-7) 0;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Desktop */
+@media (min-width: 1440px) {
+  .projects-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 600px) {
+  .hero {
+    padding: 96px 0 64px;
+    min-height: auto;
+  }
+
+  section {
+    padding: var(--space-5) 0;
+  }
+
+  .card {
+    padding: 16px;
+  }
 }
