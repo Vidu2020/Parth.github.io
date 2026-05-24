@@ -14,6 +14,11 @@
 </head>
 
 <body>
+  <div class="filters">
+  <button onclick="filterProjects('all')">All</button>
+  <button onclick="filterProjects('ml')">ML</button>
+  <button onclick="filterProjects('nlp')">NLP</button>
+</div>
 
 <!-- ================= NAVBAR ================= -->
 <header class="header">
@@ -30,32 +35,10 @@
   </div>
 </header>
 
-<!-- ================= HERO ================= -->
-<section id="home" class="hero">
-  <div class="container hero-content fade">
+<h1>
+  <span id="typing"></span>
+</h1>
 
-    <h1>
-      span id="typing"></span>
-    </h1>
-
-    <p>
-      Senior Data Scientist specializing in machine learning, 
-      deep learning, and scalable AI solutions.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#projects" class="btn primary">View Projects</a>
-      <a href="resume.pdf" class="btn secondary">Download Resume</a>
-    </div>
-
-    <div class="socials">
-      #GitHub</a>
-      #LinkedIn</a>
-      Email</a>
-    </div>
-
-  </div>
-</section>
 
 <!-- ================= PROJECTS ================= -->
 <section id="projects">
