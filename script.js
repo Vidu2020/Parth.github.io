@@ -45,3 +45,15 @@ const toggle = document.getElementById("themeToggle");
 toggle.addEventListener("click", () => {
   document.body.classList.toggle("light-mode");
 });
+
+function filterProjects(category) {
+  const cards = document.querySelectorAll(".card");
+
+  cards.forEach(card => {
+    if (category === "all" || card.classList.contains(category)) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
