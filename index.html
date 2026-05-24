@@ -1,177 +1,173 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Parth | Senior Data Scientist</title>
+  <link rel="stylesheet" href="style.css">
 
-<title>Parth | Senior Data Scientist</title>
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-<link rel="stylesheet" href="style.css">
-
-<!-- Google Font -->
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
-
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
-<button id="themeToggle">🌙</button>
-  
 <body>
+
+  <button id="themeToggle">🌙</button>
+
   <div class="filters">
-  <button onclick="filterProjects('all')">All</button>
-  <button onclick="filterProjects('ml')">ML</button>
-  <button onclick="filterProjects('nlp')">NLP</button>
-</div>
-
-<!-- ================= NAVBAR ================= -->
-<header class="header">
-  <div class="container nav">
-    <div class="logo">Parth</div>
-
-    <nav>
-      <a href="#home">Home</a>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#resume">Resume</a>
-      <a href="#contact">Contact</a>
-    </nav>
+    <button onclick="filterProjects('all')">All</button>
+    <button onclick="filterProjects('ml')">ML</button>
+    <button onclick="filterProjects('nlp')">NLP</button>
   </div>
-</header>
 
-<h1>
-  <span id="typing"></span>
-</h1>
-
-
-<!-- ================= PROJECTS ================= -->
-<section id="projects">
-  <div class="container fade">
-
-    <h2>Featured Projects</h2>
-
-    <div class="grid projects">
-
-      <div class="card glass">
-        <h3>Fraud Detection System</h3>
-        <p>Real-time ML pipeline detecting anomalies with 28% improved accuracy.</p>
-        <small>Python • TensorFlow • AWS</small>
-      </div>
-
-      <div class="card glass">
-        <h3>Recommendation Engine</h3>
-        <p>Boosted engagement by 20% using collaborative filtering techniques.</p>
-        <small>NLP • Python • Scikit-learn</small>
-      </div>
-
-      <div class="card glass">
-        <h3>Predictive Analytics</h3>
-        <p>Forecast model increasing revenue prediction efficiency by 35%.</p>
-        <small>XGBoost • Pandas</small>
-      </div>
-
-      <div class="card glass">
-        <h3>AI Chatbot</h3>
-        <p>Conversational AI using transformer models and NLP pipelines.</p>
-        <small>BERT • Transformers</small>
-      </div>
-
+  <!-- ================= NAVBAR ================= -->
+  <header class="header">
+    <div class="container nav">
+      <div class="logo">Parth</div>
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#resume">Resume</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </div>
+  </header>
 
-  </div>
-</section>
+  <h1>
+    <span id="typing"></span>
+  </h1>
 
-<!-- ================= ABOUT ================= -->
-<section id="about">
-  <div class="container about fade">
+  <!-- ================= PROJECTS ================= -->
+  <section id="projects">
+    <div class="container fade">
+      <h2>Featured Projects</h2>
 
-    <div>
-      <h2>About Me</h2>
-      <p>
-        I am a data scientist passionate about building intelligent systems 
-        and solving real-world problems using AI and data-driven insights.
-      </p>
+      <div class="grid projects">
+        <div class="card glass">
+          <h3>Fraud Detection System</h3>
+          <p>Real-time ML pipeline detecting anomalies with 28% improved accuracy.</p>
+          <small>Python • TensorFlow • AWS</small>
+        </div>
+
+        <div class="card glass">
+          <h3>Recommendation Engine</h3>
+          <p>Boosted engagement by 20% using collaborative filtering techniques.</p>
+          <small>NLP • Python • Scikit-learn</small>
+        </div>
+
+        <div class="card glass">
+          <h3>Predictive Analytics</h3>
+          <p>Forecast model increasing revenue prediction efficiency by 35%.</p>
+          <small>XGBoost • Pandas</small>
+        </div>
+
+        <div class="card glass">
+          <h3>AI Chatbot</h3>
+          <p>Conversational AI using transformer models and NLP pipelines.</p>
+          <small>BERT • Transformers</small>
+        </div>
+      </div>
     </div>
+  </section>
 
-    <div>
-      <h3>Core Skills</h3>
-      <ul class="skills">
-        <li>Python</li>
-        <li>Machine Learning</li>
-        <li>Deep Learning</li>
-        <li>NLP</li>
-        <li>TensorFlow / PyTorch</li>
-        <li>AWS / Cloud</li>
-      </ul>
+  <!-- ================= CHART SECTION ================= -->
+  <section id="impact">
+    <div class="container fade">
+      <h2>Impact Snapshot</h2>
+      <p>Selected project outcomes across accuracy, engagement, efficiency, and automation.</p>
+
+      <div class="chart-card glass">
+        <canvas id="chart"></canvas>
+      </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- ================= RESUME ================= -->
-<section id="resume">
-  <div class="container fade">
-
-    <h2>Experience & Certifications</h2>
-
-    <div class="timeline">
-
-      <div class="timeline-item glass">
-        <h3>Senior Data Scientist</h3>
-        <p>Company XYZ • 2023–Present</p>
+  <!-- ================= ABOUT ================= -->
+  <section id="about">
+    <div class="container about fade">
+      <div>
+        <h2>About Me</h2>
+        <p>
+          I am a data scientist passionate about building intelligent systems
+          and solving real-world problems using AI and data-driven insights.
+        </p>
       </div>
-
-      <div class="timeline-item glass">
-        <h3>Data Scientist</h3>
-        <p>Company ABC • 2021–2023</p>
-      </div>
-
-      <div class="timeline-item glass">
-        <h3>Education</h3>
-        <p>MSc Data Science</p>
-      </div>
-
-      <div class="timeline-item glass">
-        <h3>Certifications</h3>
-        <p>Google ML • AWS ML • Deep Learning Specialization</p>
-      </div>
-
-    </div>
-
-    <a href="resume.pdf" class="btn primary">Download Resume</a>
-
-  </div>
-</section>
-
-<!-- ================= CONTACT ================= -->
-<section id="contact">
-  <div class="container fade">
-
-    <h2>Contact</h2>
-
-    <div class="contact-grid">
 
       <div>
-        <p>Email: your@email.com</p>
-        <p>GitHub: github.com/yourusername</p>
-        <p>LinkedIn: linkedin.com/in/yourusername</p>
+        <h3>Core Skills</h3>
+        <ul class="skills">
+          <li>Python</li>
+          <li>Machine Learning</li>
+          <li>Deep Learning</li>
+          <li>NLP</li>
+          <li>TensorFlow / PyTorch</li>
+          <li>AWS / Cloud</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ================= RESUME ================= -->
+  <section id="resume">
+    <div class="container fade">
+      <h2>Experience & Certifications</h2>
+
+      <div class="timeline">
+        <div class="timeline-item glass">
+          <h3>Senior Data Scientist</h3>
+          <p>Company XYZ • 2023–Present</p>
+        </div>
+
+        <div class="timeline-item glass">
+          <h3>Data Scientist</h3>
+          <p>Company ABC • 2021–2023</p>
+        </div>
+
+        <div class="timeline-item glass">
+          <h3>Education</h3>
+          <p>MSc Data Science</p>
+        </div>
+
+        <div class="timeline-item glass">
+          <h3>Certifications</h3>
+          <p>Google ML • AWS ML • Deep Learning Specialization</p>
+        </div>
       </div>
 
-      <form>
-        <input type="text" placeholder="Name" required>
-        <input type="email" placeholder="Email" required>
-        <textarea placeholder="Message" required></textarea>
-        <button class="btn primary">Send</button>
-      </form>
-
+      <a href="resume.pdf" class="btn primary">Download Resume</a>
     </div>
+  </section>
 
-  </div>
-</section>
+  <!-- ================= CONTACT ================= -->
+  <section id="contact">
+    <div class="container fade">
+      <h2>Contact</h2>
 
-<!-- ================= FOOTER ================= -->
-<footer>
-  <p>© 2026 Parth | Built with precision & data</p>
-</footer>
+      <div class="contact-grid">
+        <div>
+          <p>Email: your@email.com</p>
+          <p>GitHub: github.com/yourusername</p>
+          <p>LinkedIn: linkedin.com/in/yourusername</p>
+        </div>
 
-<script src="script.js"></script>
+        <form>
+          <input type="text" placeholder="Name" required>
+          <input type="email" placeholder="Email" required>
+          <textarea placeholder="Message" required></textarea>
+          <button class="btn primary">Send</button>
+        </form>
+      </div>
+    </div>
+  </section>
 
+  <!-- ================= FOOTER ================= -->
+  <footer>
+    <p>© 2026 Parth | Built with precision & data</p>
+  </footer>
+
+  <script src="script.js"></script>
 </body>
 </html>
